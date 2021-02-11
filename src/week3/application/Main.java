@@ -78,7 +78,6 @@ public class Main {
                     break;
 
                 case 9 :
-                    System.out.println("Insira o valor a ser buscado; ");
                     vetor.buscaSequencial();
                     break;
 

@@ -28,20 +28,21 @@ public class Vetor {
 
     public void povoaVetor() {
         for (int i = 0; i < array.length; i++) {
+            if(array[i] == 0) {
+                validos++;
+            }
             array[i] = (int)(Math.random() * array.length * 100);
-            validos++;
         }
     }
 
     public void povoaVetorSequencial() {
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int)(Math.random() * 100 + i);
-            validos++;
-            if(i != 0 && array[i] <= array[i - 1]) {
-                i--;
-                validos--;
+            if(array[i] == 0) {
+                validos++;
             }
+            array[i] = (int)(Math.random() * (array.length * 10 - 1) + 1);
         }
+        Arrays.sort(array);
     }
 
     public void atribuiValor(Integer n) {
@@ -116,20 +117,19 @@ public class Vetor {
             if(n == array[i]) {
                 temp.array[i] = array[i];
                 exists ++;
-                break;
             }
         }
-        boolean and = false;
+        boolean firstDone = false;
         if (exists > 0) {
-            System.out.print("O valor existe no vetor nas posições: ");
+            System.out.print("O valor existe no vetor, index: ");
             for (int i = 0; i < temp.array.length; i++) {
                 if (temp.array[i] != 0) {
 
-                    if (and) {
-                        System.out.print(" e ");
+                    if (firstDone) {
+                        System.out.print(", ");
                     }
                     System.out.print(i);
-                    and = true;
+                    firstDone = true;
                 }
             }
             System.out.println(".");
