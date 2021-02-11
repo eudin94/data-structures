@@ -1,6 +1,6 @@
-package application;
+package week2.application;
 
-import model.Vetor;
+import week2.model.Vetor;
 
 import java.util.Scanner;
 
